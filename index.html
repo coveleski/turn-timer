@@ -14,114 +14,71 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <section class="section" id="config">
+    <section class="section">
       <div class="container is-max-desktop">
-        <div class="card my-3">
+        <div class="card my-3" id="configCard">
           <div class="card-header">
-            <div class="card-header-title is-centered">Setup</div>
-
-            <!-- <button class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button> -->
+            <div class="card-header-title is-centered">Game Setup</div>
           </div>
           <div class="card-content">
-            <div class="field has-addons">
-              <p class="control">
-                <span class="select">
-                  <select>
-                    <option value="red" selected>Red</option>
-                    <option value="green">Green</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                  </select>
-                </span>
-              </p>
-              <p class="control">
-                <input class="input" type="text" placeholder="Player Name" />
-              </p>
-              <p class="control">
-                <button class="button is-danger is-light">X</button>
-              </p>
-            </div>
-            <div class="field has-addons">
-              <p class="control">
-                <span class="select">
-                  <select>
-                    <option value="red">Red</option>
-                    <option value="green" selected>Green</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                  </select>
-                </span>
-              </p>
-              <p class="control">
-                <input class="input" type="text" placeholder="Player Name" />
-              </p>
-              <p class="control">
-                <button class="button is-danger is-light">X</button>
-              </p>
-            </div>
-            <div class="field has-addons">
-              <p class="control">
-                <span class="select">
-                  <select>
-                    <option value="red">Red</option>
-                    <option value="green">Green</option>
-                    <option value="blue" selected>Blue</option>
-                    <option value="yellow">Yellow</option>
-                  </select>
-                </span>
-              </p>
-              <p class="control">
-                <input class="input" type="text" placeholder="Player Name" />
-              </p>
-              <p class="control">
-                <button class="button is-danger is-light">X</button>
-              </p>
-            </div>
-            <div class="field has-addons">
-              <p class="control">
-                <span class="select">
-                  <select>
-                    <option value="red">Red</option>
-                    <option value="green">Green</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow" selected>Yellow</option>
-                  </select>
-                </span>
-              </p>
-              <p class="control">
-                <input class="input" type="text" placeholder="Player Name" />
-              </p>
-              <p class="control">
-                <button class="button is-danger is-light">X</button>
-              </p>
+            <div class="columns">
+              <div class="column is-half" id="players">
+                <div class="control">
+                  <button class="button is-success" id="addPlayer">Add Player</button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <div class="control">
+                    <label class="label" for="startTime">Starting Time</label>
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Starting Time"
+                      id="startTime"
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <label class="label" for="bonusTime">Time Added</label>
+                    <input
+                      id="bonusTime"
+                      class="input"
+                      type="text"
+                      placeholder="Time to add each turn"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- TODO: Add Starting Time and Time Increase -->
             <!-- TODO: remove color selectors, push player names into 1/2 or 2/3 column and add timer opts on right side? -->
             <div class="buttons">
-              <button class="button is-success">Add Player</button>
-              <button class="button is-info">Start Timer</button>
+              <button class="button is-info" id="startTimer">
+                Start Timer
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="card my3">
+        <div class="card my3 is-hidden" id="controlsCard">
           <div class="card-header">
             <div class="card-header-title is-centered">Controls</div>
           </div>
           <div class="card-content">
             <div class="buttons has-addons is-centered">
-              <button class="button is-info">Pause Timer</button
-              ><button class="button is-danger">Reset Timer</button>
+              <button class="button is-info" id="pauseTimer">Pause Timer</button
+              ><button class="button is-danger" id="resetTimer">
+                Reset Timer
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="card my-3">
+        <div class="card my-3 is-hidden" id="timesCard">
           <div class="card-header">
             <div class="card-header-title is-centered">
               <p>Turn Timer</p>
@@ -155,7 +112,10 @@
               </tbody>
             </table>
 
-            <button class="button is-large is-fullwidth is-primary is-rounded">
+            <button
+              class="button is-large is-fullwidth is-primary is-rounded"
+              id="turnOver"
+            >
               Next Turn
             </button>
           </div>

@@ -13,43 +13,51 @@ const bonusTimeInput = document.querySelector("#bonusTime");
 
 // const players = querySelectorAll('.player');
 const playersList = document.querySelector('#players')
-let numPlayers = 4;
+let numPlayers = 0;
 let initialTime = 0;
 let bonusTime = 0;
 
-startButton.addEventListener('click', function (e){
-    configCard.classList.add('is-hidden');
-    controlsCard.classList.remove('is-hidden');
-    timesCard.classList.remove('is-hidden');
+document.addEventListener('DOMContentLoaded', function(e){
+    for (let i = 0; i < 4; ++i){
+        addPlayerField();
+    }
 
-    initialTime = initialTimeInput.value;
-    bonusTime = bonusTimeInput.value;
-
+    startButton.addEventListener('click', function (e){
+        configCard.classList.add('is-hidden');
+        controlsCard.classList.remove('is-hidden');
+        timesCard.classList.remove('is-hidden');
+    
+        initialTime = initialTimeInput.value;
+        bonusTime = bonusTimeInput.value;
+    
+    });
+    
+    resetButton.addEventListener('click', function (e){
+        configCard.classList.remove('is-hidden');
+        controlsCard.classList.add('is-hidden');
+        timesCard.classList.add('is-hidden');
+        //todo: don't clear and save last settings?
+        initialTime = 0;
+        bonusTime = 0;
+        initialTimeInput.value = "";
+        bonusTimeInput.value = "";
+    });
+    
+    endTurnButton.addEventListener('click', function (e){
+    
+    });
+    
+    addPlayerButton.addEventListener('click', function (e){
+        addPlayerField();
+    });
+    
+    pauseButton.addEventListener('click', function (e){
+        //todo: pause timer
+    
+    });
 });
 
-resetButton.addEventListener('click', function (e){
-    configCard.classList.remove('is-hidden');
-    controlsCard.classList.add('is-hidden');
-    timesCard.classList.add('is-hidden');
-    //todo: don't clear and save last settings?
-    initialTime = 0;
-    bonusTime = 0;
-    initialTimeInput.value = "";
-    bonusTimeInput.value = "";
-});
 
-endTurnButton.addEventListener('click', function (e){
-
-});
-
-addPlayerButton.addEventListener('click', function (e){
-    addPlayerField();
-});
-
-pauseButton.addEventListener('click', function (e){
-    //todo: pause timer
-
-});
 
 function addPlayerField(){
     let newField = document.createElement('div');
@@ -71,6 +79,10 @@ function addPlayerField(){
     let newButton = document.createElement('button');
     newButton.classList.add('button', 'is-danger');
     newButton.innerText = "X";
+    newButton.addEventListener('click', function (e){
+        let rem = newButton.parentElement.parentElement;
+        rem.parentElement.removeChild(rem);
+    });
 
     newLabel.appendChild(newInput);
     newButtonContainer.appendChild(newButton);
