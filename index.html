@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-grey-light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--TODO: Update page title-->
+    <!-- TODO: FAVICON -->
+    <title>Turn Timer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <section class="section" id="config">
+      <div class="container is-max-desktop">
+        <div class="card my-3">
+          <div class="card-header">
+            <div class="card-header-title is-centered">Setup</div>
+
+            <!-- <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button> -->
+          </div>
+          <div class="card-content">
+            <div class="field has-addons">
+              <p class="control">
+                <span class="select">
+                  <select>
+                    <option value="red" selected>Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <input class="input" type="text" placeholder="Player Name" />
+              </p>
+              <p class="control">
+                <button class="button is-danger is-light">X</button>
+              </p>
+            </div>
+            <div class="field has-addons">
+              <p class="control">
+                <span class="select">
+                  <select>
+                    <option value="red">Red</option>
+                    <option value="green" selected>Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <input class="input" type="text" placeholder="Player Name" />
+              </p>
+              <p class="control">
+                <button class="button is-danger is-light">X</button>
+              </p>
+            </div>
+            <div class="field has-addons">
+              <p class="control">
+                <span class="select">
+                  <select>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue" selected>Blue</option>
+                    <option value="yellow">Yellow</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <input class="input" type="text" placeholder="Player Name" />
+              </p>
+              <p class="control">
+                <button class="button is-danger is-light">X</button>
+              </p>
+            </div>
+            <div class="field has-addons">
+              <p class="control">
+                <span class="select">
+                  <select>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow" selected>Yellow</option>
+                  </select>
+                </span>
+              </p>
+              <p class="control">
+                <input class="input" type="text" placeholder="Player Name" />
+              </p>
+              <p class="control">
+                <button class="button is-danger is-light">X</button>
+              </p>
+            </div>
+
+            <!-- TODO: Add Starting Time and Time Increase -->
+            <!-- TODO: remove color selectors, push player names into 1/2 or 2/3 column and add timer opts on right side? -->
+            <div class="buttons">
+              <button class="button is-success">Add Player</button>
+              <button class="button is-info">Start Timer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card my3">
+          <div class="card-header">
+            <div class="card-header-title is-centered">Controls</div>
+          </div>
+          <div class="card-content">
+            <div class="buttons has-addons is-centered">
+              <button class="button is-info">Pause Timer</button
+              ><button class="button is-danger">Reset Timer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card my-3">
+          <div class="card-header">
+            <div class="card-header-title is-centered">
+              <p>Turn Timer</p>
+            </div>
+          </div>
+          <div class="card-content">
+            <table class="table is-fullwidth is-narrow is-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Time Remaining</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-selected">
+                  <td>Alice</td>
+                  <td>XX:XX</td>
+                </tr>
+                <tr>
+                  <td>Bob</td>
+                  <td>XX:XX</td>
+                </tr>
+                <tr>
+                  <td>Claire</td>
+                  <td>XX:XX</td>
+                </tr>
+                <tr>
+                  <td>David</td>
+                  <td>XX:XX</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button class="button is-large is-fullwidth is-primary is-rounded">
+              Next Turn
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="app.js"></script>
+</html>
